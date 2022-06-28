@@ -1,0 +1,1 @@
+# simple-jikan-app
