@@ -2,11 +2,13 @@
 
 html {
   box-sizing: border-box;
+  font-size: 62.5%;
 }
 
 *,
 *::before,
 *::after {
+  padding: 0;
   box-sizing: inherit;
 }
 
@@ -19,38 +21,107 @@ h2 {
 body {
   background-color: #0b1622;
   color: #ffffff;
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding-top: 50px;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-bottom: 50px;
+  max-width: 128rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 5rem 1rem;
 }
 
-.manga {
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+button {
+  background-color: #151f2e;
+  border: none;
+  border-radius: 1rem;
+  color: #ffffff;
+  font-family: inherit;
+  font-weight: 900;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  width: 45%;
+}
+
+.top-25 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.series {
+  width: 90%;
   background-color: #151f2e;
   display: flex;
-  gap: 20px;
-  width: 950px;
-  padding: 20px;
-  border-radius: 10px;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
 }
 
 .info {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 2rem;
 }
 
 img {
   object-fit: contain;
+}
+
+#scrollToTop {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background-color: #151f2e;
+  box-shadow: 0 0 14px -5px rgba(0, 0, 0, 0.5);
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -12rem;
+  transition: margin-bottom 0.2s;
+  cursor: pointer;
+}
+
+#scrollToTop.active {
+  margin-bottom: 0;
+}
+
+@media (min-width: 40em) {
+  .series {
+    flex-direction: row;
+  }
+
+  button {
+    width: 30%;
+  }
+}
+
+@media (min-width: 55em) {
+  .series {
+    width: 80%;
+  }
 }
